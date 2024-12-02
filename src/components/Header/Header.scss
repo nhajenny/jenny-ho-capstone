@@ -1,0 +1,39 @@
+@use '../../styles/global.scss' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixins' as *;
+
+.header {
+    background-color: $pink;
+    width: 100%;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    &__button-container {
+        display: flex;
+        gap: 10rem;
+    }
+    &__link {
+        color: $dark-purple;
+        text-decoration: none;
+        @include body-large;
+        &:hover {
+            text-decoration: none;
+            cursor: pointer;
+            color: $purple;
+        }
+        &--active {
+            font-weight: bold;
+            border-bottom: 2px solid $dark-purple;
+        }
+    }
+}
+

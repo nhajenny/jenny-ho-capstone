@@ -1,0 +1,8 @@
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+@use "./partials/typography" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
