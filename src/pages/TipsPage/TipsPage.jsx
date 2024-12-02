@@ -10,7 +10,7 @@ function TipsPage() {
   const [error, setError] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Fetch tips
+ 
   const fetchTips = async () => {
     try {
       const response = await axios.get("http://localhost:8080/api/tips");
@@ -21,7 +21,7 @@ function TipsPage() {
     }
   };
 
-  // Fetch festivals for the dropdown
+
   const fetchFestivals = async () => {
     try {
       const response = await axios.get("http://localhost:8080/api/festivals");
@@ -84,7 +84,7 @@ function TipsPage() {
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           festivals={festivals}
-          onSuccess={fetchTips} // Refresh tips after adding a new one
+          onSuccess={fetchTips} 
         />
       )}
     </section>
