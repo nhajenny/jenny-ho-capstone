@@ -24,6 +24,14 @@ function Header() {
                         All Festivals
                     </NavLink>
                     <NavLink
+                        to="/tips"
+                        className={({ isActive }) => 
+                            isActive ? "nav__link nav__link--active" : "nav__link"
+                        }
+                    >
+                        Tips and Tricks
+                    </NavLink>
+                    <NavLink
                         to="/contact"
                         className={({ isActive }) => 
                             isActive ? "nav__link nav__link--active" : "nav__link"
