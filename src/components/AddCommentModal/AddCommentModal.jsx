@@ -1,9 +1,13 @@
 import { useState } from "react";
-import cancelIcon from '../../assets/cancel_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg';
-import './AddCommentModal.scss';
+import cancelIcon from "../../assets/cancel_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg";
+import "./AddCommentModal.scss";
 
 function AddCommentModal({ onClose, onAddComment }) {
-    const [formData, setFormData] = useState({ name: "", comment: "", rating: "" });
+    const [formData, setFormData] = useState({
+        name: "",
+        comment: "",
+        rating: "",
+    });
     const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
@@ -40,7 +44,12 @@ function AddCommentModal({ onClose, onAddComment }) {
             newErrors.comment = "Comment must be at least 10 characters.";
         }
         const ratingNum = parseFloat(formData.rating);
-        if (!formData.rating || isNaN(ratingNum) || ratingNum < 1 || ratingNum > 5) {
+        if (
+            !formData.rating ||
+            isNaN(ratingNum) ||
+            ratingNum < 1 ||
+            ratingNum > 5
+        ) {
             newErrors.rating = "Rating must be a number between 1 and 5.";
         }
 
@@ -52,9 +61,9 @@ function AddCommentModal({ onClose, onAddComment }) {
         e.preventDefault();
 
         if (validateForm()) {
-            onAddComment({ ...formData, created_at: new Date().toISOString() }); 
-            onClose(); 
-            setFormData({ name: "", comment: "", rating: "" }); 
+            onAddComment({ ...formData, created_at: new Date().toISOString() });
+            onClose();
+            setFormData({ name: "", comment: "", rating: "" });
         }
     };
 
@@ -79,7 +88,11 @@ function AddCommentModal({ onClose, onAddComment }) {
                             onChange={handleChange}
                             required
                         />
-                        {errors.name && <p className="comment-modal__error">{errors.name}</p>}
+                        {errors.name && (
+                            <p className="comment-modal__error">
+                                {errors.name}
+                            </p>
+                        )}
                     </label>
                     <label className="comment-modal__label">
                         Comment:
@@ -89,7 +102,11 @@ function AddCommentModal({ onClose, onAddComment }) {
                             onChange={handleChange}
                             required
                         />
-                        {errors.comment && <p className="comment-modal__error">{errors.comment}</p>}
+                        {errors.comment && (
+                            <p className="comment-modal__error">
+                                {errors.comment}
+                            </p>
+                        )}
                     </label>
                     <label className="comment-modal__label">
                         Rating:
@@ -102,7 +119,11 @@ function AddCommentModal({ onClose, onAddComment }) {
                             onChange={handleChange}
                             required
                         />
-                        {errors.rating && <p className="comment-modal__error">{errors.rating}</p>}
+                        {errors.rating && (
+                            <p className="comment-modal__error">
+                                {errors.rating}
+                            </p>
+                        )}
                     </label>
                     <button
                         className="comment-modal__button"
