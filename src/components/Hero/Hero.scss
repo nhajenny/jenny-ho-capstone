@@ -29,9 +29,9 @@
         &-title {
             color: $dark-purple;
             padding: 2rem;
-            @include page-header;
             background-color: rgba(255, 192, 203, 0.5);
             border-radius: 1.25rem;
+            letter-spacing: .3125rem;
         }
     }
 
