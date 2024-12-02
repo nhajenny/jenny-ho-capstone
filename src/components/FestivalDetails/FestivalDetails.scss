@@ -1,0 +1,142 @@
+@use '../../styles/global.scss' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixins' as *;
+
+.festival-details {
+    padding: 2rem;
+    font-family: "PathwayExtreme";
+    color: $dark-purple;
+    background-color: rgba(159, 134, 192, 0.2);
+    &__header {
+        text-align: center;
+        margin-bottom: 2rem;
+
+        &-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: .25rem;
+        }
+
+        &-location,
+        &-dates {
+            font-size: 1.2rem;
+            margin: 0.2rem 0;
+        }
+
+        &-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: $pink;
+            color: $dark-purple;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+
+            &:hover {
+                background-color: rgba($pink, 0.8);
+            }
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    &__section {
+        flex: 1 1 100%;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        padding: 1.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background-color: $light-grey;
+        &-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+        }
+        &-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: $dark-purple;
+        }
+        &-button {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            gap: 0.125rem;
+            @include buttons-labels;
+            color: $dark-purple;
+            border: 0.0625rem solid $dark-purple;
+            background-color: $white; 
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+            &:hover {
+                background-color: $dark-purple; 
+                color: $pink; 
+                transform: scale(1.05); 
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); 
+            }
+        }
+    }
+
+    &__tickets,
+    &__hotels {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    &__ticket-box,
+    &__hotel-box {
+        flex: 1 1 calc(50% - 1rem);
+        background-color: white;
+        border-radius: 5px;
+        padding: 1rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    &__message {
+        color: #666;
+        font-size: 1rem;
+    }
+
+    &__error {
+        color: red;
+        text-align: center;
+    }
+
+    &__loading {
+        text-align: center;
+    }
+}
+
+.festival-details__comments {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.festival-details__comment-box {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
