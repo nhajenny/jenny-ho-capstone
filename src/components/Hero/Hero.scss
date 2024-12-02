@@ -1,0 +1,39 @@
+@use '../../styles/global.scss' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/mixins' as *;
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../src/assets/hero-background.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 30rem;
+    padding: 1rem;
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &-subtitle {
+            color: $dark-purple;
+            font-style: italic;
+            @include sub-header;
+            padding: 1rem;
+           
+        }
+        &-title {
+            color: $dark-purple;
+            padding: 2rem;
+            @include page-header;
+            background-color: rgba(255, 192, 203, 0.5);
+            border-radius: 1.25rem;
+        }
+    }
+
+}
+
